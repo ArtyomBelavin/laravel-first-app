@@ -1,0 +1,165 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    padding: 0 15px;
+    margin: 0 auto;
+    padding: 20px 0;
+    align-items: center;
+}
+
+.list-item {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.item-link {
+    color: #051AFF;
+}
+
+.item-link span {
+    color: #FF0000;
+}
+
+.main {
+    background-color: #DDE8FF;
+}
+
+.reports,
+.containter {
+    max-width: 1440px;
+    padding: 0 15px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.create-btn {
+    display: inline-block;
+    color: #fff;
+    padding: 12px 21px;
+    border-radius: 5px;
+    background-color: #FF0000;
+    margin-bottom: 45px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.create-btn:hover {
+    background-color: #b33b3b;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 27px;
+    border-radius: 20px;
+    background-color: #fff;
+    max-width: 380px;
+    min-width: 380px;
+    min-height: 324px;
+}
+
+.card-created-at {
+    color: #FF0000;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.card-number {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.card-description {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+.status-new {
+    color: #000;
+    font-weight: 700;
+}
+
+.status-rejected {
+    color: #FF0000;
+    font-weight: 700;
+}
+
+.status-success {
+    color: #051AFF;
+    font-weight: 700;
+}
+
+.form-delete {
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-btn {
+    background-color: #FF0000;
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+    transition: background-color .2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #b33b3b;
+}
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    max-width: 653px;
+}
+
+.create-form__input {
+    border: 1px solid #051AFF;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.create-form__textarea {
+    border: 1px solid #051AFF;
+    padding: 5px;
+    border-radius: 5px;
+    resize: none;
+    min-height: 150px;
+}
+
+.update-btn {
+    background-color: #051AFF;
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+    transition: background-color .2s ease;
+}
+
+.update-btn:hover {
+    background-color: #3541c7;
+}
