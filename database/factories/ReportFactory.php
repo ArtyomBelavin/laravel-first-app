@@ -14,13 +14,15 @@ class ReportFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
+        $faker = \Faker\Factory::create();
+
         return [
             'number' => $faker->numerify('aaa-###'),
             'description' => $faker->paragraph,
             'created_at' => $faker->dateTimeBetween('-1 week', 'now'),
-            'status_id' => 1
+            'status_id' => 1,
         ];
     }
 }
