@@ -40,6 +40,8 @@ class ReportController extends Controller
         return view('report.index', compact('reports', 'statuses', 'sort', 'status'));
     }
 
+    // task 5
+
     public function destroy(Report $report)
     {
         $report->delete();
