@@ -29,7 +29,7 @@
         <div class="containter">
             <form class="create-form" method="POST" action="{{ route('report.store') }}">
                 @csrf
-                <input name="number" class="create-form__input" type="text" placeholder="регистрационный номер авто">
+                <input name="number" class="create-form__input" type="text" placeholder="регистрационный номер авто" require>
                 <textarea name="description" class="create-form__textarea" placeholder="описание нарушения"></textarea>
                 <button class="create-btn" type="submit">Создать</button>
             </form>
