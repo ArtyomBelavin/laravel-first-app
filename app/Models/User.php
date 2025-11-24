@@ -13,7 +13,7 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
-    public function reports():HasMany
+    public function reports(): HasMany
     {
         return $this->hasMany(Report::class);
     }
@@ -25,7 +25,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'lastname',
+        'middlename',
         'email',
+        'login',
+        'tel',
         'password',
     ];
 
