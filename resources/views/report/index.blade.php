@@ -11,8 +11,9 @@
 </head>
 
 <body>
+    <x-app-layout>
 
-    <header class="header">
+     <!-- <header class="header">
         <nav class="header-nav">
             <ul class="nav-list">
                 <li class="list-item">
@@ -25,12 +26,10 @@
                 <option value="Выйти">Выйти</option>
             </select>
         </div>
-    </header>
+    </header>  -->
     <main class="main">
         <section class="reports">
             <a href="/reports/create" class="create-btn">Создать заявление</a>
-
-            <x-app-layout>
                 <div>
                     <span>Сортировка по дате создания:</span>
                     <a href="{{ route('report.index', ['sort' => 'desc', 'status' => $status]) }}">Сначала новые</a>
@@ -71,10 +70,11 @@
                     @endforeach
                     {{ $reports->links() }}
                 </div>
-            </x-app-layout>
 
         </section>
     </main>
+</x-app-layout>
+
 </body>
 
 </html>
