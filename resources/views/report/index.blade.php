@@ -13,7 +13,7 @@
 <body>
     <x-app-layout>
 
-     <!-- <header class="header">
+        <!-- <header class="header">
         <nav class="header-nav">
             <ul class="nav-list">
                 <li class="list-item">
@@ -27,9 +27,9 @@
             </select>
         </div>
     </header>  -->
-    <main class="main">
-        <section class="reports">
-            <a href="/reports/create" class="create-btn">Создать заявление</a>
+        <main class="main">
+            <section class="reports">
+                <a href="/reports/create" class="create-btn">Создать заявление</a>
                 <div>
                     <span>Сортировка по дате создания:</span>
                     <a href="{{ route('report.index', ['sort' => 'desc', 'status' => $status]) }}">Сначала новые</a>
@@ -60,6 +60,9 @@
                         <div class="card-status-container">
                             <p class="card-status">{{ $report->status->name ?? 'Статус не указан' }}</p>
                         </div>
+                        @isset($report->path_img)
+                        <img src="{{ Storage::url($report->path_img) }}" class="contact-block__img" alt="">
+                        @endisset
                         <a class="update-btn" href="/reports/{{ $report->id }}/edit">Изменить</a>
                         <form class="form-delete" method="POST" action="{{ route('report.destroy', $report->id) }}">
                             @method('delete')
@@ -71,9 +74,9 @@
                     {{ $reports->links() }}
                 </div>
 
-        </section>
-    </main>
-</x-app-layout>
+            </section>
+        </main>
+    </x-app-layout>
 
 </body>
 

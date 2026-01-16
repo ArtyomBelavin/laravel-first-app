@@ -6,6 +6,8 @@ use App\Models\Report;
 use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
 
 class ReportController extends Controller
 {
@@ -54,18 +56,29 @@ class ReportController extends Controller
         }
     }
 
-    public function store(Request $request, Report $report)
+    public function store(Request $request)
     {
-
         $data = $request->validate([
-            'number' => 'string',
-            'description' => 'string',
+            'number' => 'required|string',
+            'description' => 'required|string',
+            'path_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $data['user_id'] = Auth::user()->id;
+        if ($request->hasFile('path_img')) {
+
+            $path = Storage::disk('public')->put(
+                'reports',
+                $request->file('path_img')
+            );
+
+            $data['path_img'] = $path;
+        }
+
+        $data['user_id'] = Auth::id();
         $data['status_id'] = 1;
 
-        $report->create($data);
+        Report::create($data);
+
         return redirect()->back();
     }
 

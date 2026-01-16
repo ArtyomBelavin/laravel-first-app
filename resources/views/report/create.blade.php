@@ -19,19 +19,19 @@
                 </li>
             </ul>
         </nav>
-        <div class="login-logout">
-            <select name="" id="">
-                <option value="Выйти">Выйти</option>
-            </select>
-        </div>
+
     </header>
     <main class="main">
         <div class="containter">
-            <form class="create-form" method="POST" action="{{ route('report.store') }}">
+            <form class="create-form" method="POST" action="{{ route('report.store') }}" enctype="multipart/form-data">
                 @csrf
-                <input name="number" class="create-form__input" type="text" placeholder="регистрационный номер авто" require>
-                <textarea name="description" class="create-form__textarea" placeholder="описание нарушения"></textarea>
+                <input name="number" class="create-form__input" type="text" placeholder="регистрационный номер авто" required>
+                <textarea name="description" class="create-form__textarea" placeholder="описание нарушения" required></textarea>
+                <label>Номер автомобиля</label>
+                <input class="create-form__input" type="file" name="path_img" required>
                 <button class="create-btn" type="submit">Создать</button>
+
+
             </form>
         </div>
 
